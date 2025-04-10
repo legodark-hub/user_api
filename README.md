@@ -58,6 +58,16 @@ The API will be available at `http://localhost:8000`
 
 ## API Endpoints
 
+Automatically generated OpenAPI-based documentation at:
+
+<http://localhost:8000/schema> (for ReDoc),
+
+<http://localhost:8000/schema/swagger> (for Swagger UI),
+
+<http://localhost:8000/schema/elements> (for Stoplight Elements)
+
+<http://localhost:8000/schema/rapidoc> (for RapiDoc)
+
 - `POST /users/` - Create a new user
 - `GET /users/` - List all users
 - `GET /users/{user_id}` - Get a specific user

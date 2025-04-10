@@ -22,4 +22,4 @@ RUN poetry install --no-dev --no-root
 COPY . .
 
 # Run the application
-CMD ["poetry", "run", "python", "-m", "granian", "--interface", "asgi", "--host", "0.0.0.0", "--port", "8000", "src.app:app"]
+CMD ["sh", "-c", "yes y | poetry run litestar --app src.app:app database upgrade && poetry run python -m granian --interface asgi --host 0.0.0.0 --port 8000 src.app:app"]

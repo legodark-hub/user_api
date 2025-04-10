@@ -20,5 +20,5 @@ app = Litestar(
         SQLAlchemyInitPlugin(config=sqlalchemy_config),
         SQLAlchemySerializationPlugin(),
     ],
-    debug=True,
+    # debug=True,
 )

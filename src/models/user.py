@@ -1,15 +1,19 @@
-from sqlalchemy import String
+from sqlalchemy import BigInteger, String
 from sqlalchemy.orm import Mapped, mapped_column
 
-from advanced_alchemy.base import BigIntAuditBase
+from src.models.base import BaseModel
+from src.utils.custom_types import created_at, updated_at
 
 
-class UserModel(BigIntAuditBase):
+class UserModel(BaseModel):
     __tablename__ = "user"
 
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
     name: Mapped[str] = mapped_column(String)
     surname: Mapped[str] = mapped_column(String)
     password: Mapped[str] = mapped_column(String)
+    created_at: Mapped[created_at]
+    updated_at: Mapped[updated_at]
     
     def to_dict(self):
         return {
